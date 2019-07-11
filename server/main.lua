@@ -2,20 +2,23 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+
+
+
 RegisterServerEvent('sr_distress')
-AddEventHandler('sr_distress', function(PedPosition,playerreply)  --stage 2
+AddEventHandler('sr_distress', function(PedPosition,PlayerServerID)  --stage 2
    
-   TriggerClientEvent('sr_distress',-1, PedPosition,playerreply)
+   TriggerClientEvent('sr_distress',-1, PedPosition,PlayerServerID)
 	print"testdistress2"
-	print(playerreply)
+	print(PlayerServerID)
 end)
 
 
 RegisterServerEvent('sr_distressreply')                             ---- stage 4 
-AddEventHandler('sr_distressreply', function(PedPosition,playerreply)
-TriggerClientEvent('esx:showNotification',playerreply, '~y~EMS is on the way!')
+AddEventHandler('sr_distressreply', function(PedPosition,PlayerServerID)
+TriggerClientEvent('esx:showNotification',PlayerServerID, '~y~EMS has your location and is on the way!')
 	print"testdistres4"
-	print(playerreply)
+	print(PlayerServerID)
 end)
 
 
