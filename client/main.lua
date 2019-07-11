@@ -37,7 +37,7 @@ msgsent = false
 		while IsDead do
 			Citizen.Wait(0)
 			if Config.displaymessage == true then 
-			drawTxt(0.540, 0.56, 1.0,1.0,1.2, "Press ~g~G~w~ to Call for Help", 20, 20, 100, 255)
+			drawTxt(0.540, 0.56, 1.0,1.0,1.2, "Press ~g~G~w~ to Call for Help", 255, 255, 255, 255)
 			end
 			if IsControlPressed(0, 47) and msgsent == false then
 			msgsent = true
@@ -83,7 +83,7 @@ end)
 	repeat
 	Wait(10)
 
-    drawTxt(0.540, 0.56, 1.0,1.0,1.2, "Citizen Unconsious", 20, 20, 100, 255)
+    drawTxt(0.540, 0.56, 1.0,1.0,1.2, "Citizen Unconsious", 255, 255, 255, 255)
 	drawTxt(0.540, 0.63, 1.0,1.0,1.0, "Y", 0, 255, 0, 255)
     drawTxt(0.540, 0.69, 1.0,1.0,1.0, "N", 255, 0, 0, 255)
 	drawTxt(0.559, 0.63, 1.0,1.0,1.0, "to accept Call", 255, 100, 100, 255)
