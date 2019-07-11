@@ -33,10 +33,14 @@ end)
 
 function WaitforGpress()
 	Citizen.CreateThread(function()
-
+msgsent = false
 		while IsDead do
 			Citizen.Wait(0)
-			if IsControlPressed(0, 47) then
+			if Config.displaymessage == true then 
+			drawTxt(0.540, 0.56, 1.0,1.0,1.2, "Press ~g~G~w~ to Call for Help", 20, 20, 100, 255)
+			end
+			if IsControlPressed(0, 47) and msgsent == false then
+			msgsent = true
 				SendDistressSignals()
 				break
 				
